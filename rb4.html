@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src=https://code.jquery.com/jquery-1.12.1.min.js></script>
+<style>
+    #redball
+    {
+        position:absolute;
+    }
+</style>
+<script>
+    function pfadeout()
+    {   var myparagraph=$("#mydiv");
+        console.log(myparagraph);
+        myparagraph.fadeOut();
+    }
+    function pfadein()
+    {   var myparagraph=$("#mydiv");
+        myparagraph.fadeIn();
+    }
+    function moveup()
+    {   var ball=$("#redball")
+        ball.animate({"top":"-=10px"},100,"linear");
+    }
+    function movedown()
+    {   var ball=$("#redball")
+        ball.animate({"top":"+=10px"},100,"linear");
+    }
+    function moveright()
+    {   var ball=$("#redball")
+        ball.animate({"left":"+=10"}, 100,"linear");
+    }
+    function moveleft()
+    {   var ball=$("#redball")
+        ball.animate({"left":"-=10"}, 100,"linear");
+    }
+    function movedownright()
+    {   movedown();
+        moveright();
+    }
+    
+</script>
+</head>
+<body>
+    <p id ="myp"> 
+        Let's fade out!
+    </p>
+    <p>
+        <div id="mydiv">Let's fade in!</div>
+    </p>
+    <img id="redball" src="http://lrn.icstars.org/redball.jpg"></img>
+    <button onclick="moveup()">Move Up</button>
+    <button onclick="movedown()">Move Down</button>
+    <button onclick="moveright()">Move Right</button>
+    <button onclick="moveleft()">Move Left</button>
+    <button onclick="movedownright()">Move diagonal</button>
+    <button onclick="pfadeout()">Fade Out</button>
+    <button onclick="pfadein()">Fade In</button>
+</body>
+</html>
